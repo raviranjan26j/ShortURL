@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        .main {
+            border: 2px solid gray;
+            width: 500px;
+            text-align: center;
+            margin: auto;
+            border-radius: 25px;
+        }
+
+        h1 {
+            color: crimson;
+        }
+        h2 {
+            color: brown;
+        }
+        .button {
+  display: inline-block;
+  padding: 7px 25px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 4px #999;
+}
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);   
+}
+input[type=email] input[type=password] input[type=text]  {
+    width: 100%;
+    padding: 15px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    box-sizing: border-box; 
+  }
+  body{
+            background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+            
+        }
+        html {
+         height: 100%;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <br><br><br><br>
+        <a href="/SSR" style="float: right;"><button class="button">Back</button></a>
+        <h1 style="color: crimson;text-align: center;">SHORT URL SERVICE</h1>
+        <div class="main">
+            <div style="text-align: center;">
+                <h2>Profile</h2>
+            </div>
+            <div style="text-align: center;">
+                <form action="/Profile" method="post">
+                    <span>Full Name : </span>
+                    <input type="text" required name="Name" value="<%= Name %>"/>
+                    <br><br>
+                    <span   style="margin-left: 25px;">Email : </span>
+                    <input type="email" required name="Email" value="<%= Email %>"/>
+                    <br><br>
+                    <span>password : </span>
+                    <input type="text" required name="Password" value="<%= Password %>"/>
+                    <br><br>
+                    <button type="submit" class="button">Save</button>
+                </form>
+                <br><br>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -18,11 +18,11 @@ app.set('views',path.resolve('./Views'));
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use(CookiesParser());
-app.use(express.static(path.join(__dirname,'public')))
+//app.use(express.static(path.join(__dirname,'public')))
 
 app.use('/url',auth,URLRouter);
 app.use('/SSR',auth,SSRRouter);
 app.use('/',HomeRouter);
 
-app.listen(process.env.PORT || 3000,()=> console.log('server is running'));
+app.listen(process.env.PORT,()=> console.log('server is running'));
 

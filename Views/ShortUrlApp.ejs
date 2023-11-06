@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Short URL</title>
+    <style>
+        table{
+            border: 2px solid black;
+        }
+        thead th{
+            border: 2px solid black;
+        }
+        td{
+            border: 2px solid black;
+            padding: 10px;
+        }
+        .button {
+  display: inline-block;
+  padding: 13px 25px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 4px #999;
+}
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);   
+}
+input[type=text], select {
+    width: 100%;
+    padding: 15px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    box-sizing: border-box;
+  }
+  body{
+            background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+            
+        }
+        html {
+         height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align: center;">
+        <a href="/Logout"><img src="Images/logout.png" style="max-width: 25px;padding-right: 30px;" align="right" /></a>
+        <a href="/Profile"><img src="Images/profile.png" style="max-width: 28px;padding-right: 30px;" align="right" /></a>
+        <h1 style="color: crimson;padding-left: 125px;">CREATE A SHORT URL</h1>
+    </div>  
+    <div style="text-align: center;">
+            <span style="color: brown;"> Give Redirect Input URL:</span>
+            <br><br>
+            <form method="post" action="/url">
+             <input type="text" name="url" placeholder="example: https://www.google.com" style="width: 300px;">
+             <button class="button" type="submit"> Create short URL</button>
+            </form>
+        </div>
+        <br><br><br><br>
+        <div style="text-align: center;">
+        <table style="text-align: center;margin: auto;">
+            <thead>
+            <th>SL No.</th>
+            <th>Redirect URL</th>
+            <th>Short URL</th>
+            <th>Click Count</th>
+        </thead>
+           <tbody>
+            <% url.forEach((e,index)=>{ %>
+                <tr>
+                <td><%=index + 1%></td>
+                <td><%=e.URL %></td>
+                <td><a target="_blank" href=<%='url/'+e.ShortURL %>><%=e.ShortURL %></a></td>
+                <td><%=e.visitHistory.length %></td>
+            </tr>
+            <% }) %>
+           </tbody>
+        </table>
+    </div>
+    </div>
+</body>
+</html>

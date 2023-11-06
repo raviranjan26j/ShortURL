@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body{
+            background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+            
+        }
+        html {
+         height: 100%;
+        }
+        .main {
+            border: 2px solid gray;
+            width: 500px;
+            text-align: center;
+            margin: auto;
+            border-radius: 25px;
+        }
+
+        h1 {
+            color: crimson;
+        }
+        h2 {
+            color:brown;
+        }
+        .button {
+  display: inline-block;
+  padding: 8px 25px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 4px #999;
+}
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);   
+}
+input[type=email] input[type=password]  {
+    width: 100%;
+    padding: 15px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    box-sizing: border-box;
+  }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <br><br><br><br>
+        <h1 style="color: crimson;text-align: center;">SHORT URL SERVICE</h1>
+        <div class="main">
+            <div style="text-align: center;">
+                <h2>LOGIN</h2>
+            </div>  
+            <div style="text-align: center;">
+                <form action="/login" method="post">
+                    <span style="margin: auto;margin-left: 23px;">Email : </span>
+                    <input type="email" required name="Email"/>
+                    <br><br>
+                    <span style="margin: auto;">Password : </span>
+                    <input type="password" required name="Password"/>
+                    <br><br>
+                    <button class="button" type="submit">Login</button>
+                </form>
+                <br><br>
+                <a href="/signup">New User? - Sign up</a>
+                <br><br>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

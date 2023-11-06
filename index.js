@@ -24,5 +24,5 @@ app.use('/url',auth,URLRouter);
 app.use('/SSR',auth,SSRRouter);
 app.use('/',HomeRouter);
 
-app.listen(process.env.PORT || 5000,()=> console.log('server is running'));
+app.listen(process.env.PORT || 3000,()=> console.log('server is running'));
 

@@ -18,7 +18,7 @@ app.set('views',path.resolve('./Views'));
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use(CookiesParser());
-//app.use(express.static(path.join(__dirname,'public')))
+app.use(express.static(path.join(__dirname,'public')))
 
 app.use('/url',auth,URLRouter);
 app.use('/SSR',auth,SSRRouter);
